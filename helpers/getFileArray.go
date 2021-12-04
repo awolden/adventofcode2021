@@ -22,3 +22,13 @@ func GetFileArray(file string) []string {
 	}
 	return arr
 }
+
+func Contains(s []int, i int) bool {
+	for _, v := range s {
+		if v == i {
+			return true
+		}
+	}
+
+	return false
+}
