@@ -48,6 +48,16 @@ func ConvertIntArr(nums []int) string {
 	return strings.Join(arr, "")
 }
 
+func ConvertStrArr(nums []string) []int {
+
+	var arr = make([]int, 0)
+	for _, numAsString := range nums {
+		num, _ := strconv.Atoi(numAsString)
+		arr = append(arr, num)
+	}
+	return arr
+}
+
 func Contains(s []int, i int) bool {
 	for _, v := range s {
 		if v == i {
@@ -104,4 +114,16 @@ func Filter(vs []string, f func(string) bool) []string {
 		}
 	}
 	return filtered
+}
+
+type ByLength []string
+
+func (s ByLength) Len() int {
+	return len(s)
+}
+func (s ByLength) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+func (s ByLength) Less(i, j int) bool {
+	return len(s[i]) < len(s[j])
 }
