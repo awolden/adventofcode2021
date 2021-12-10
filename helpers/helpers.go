@@ -106,6 +106,18 @@ func Reverse(s string) string {
 	return string(runes)
 }
 
+func ReverseString(s []string) []string {
+	a := make([]string, len(s))
+	copy(a, s)
+
+	for i := len(a)/2 - 1; i >= 0; i-- {
+		opp := len(a) - 1 - i
+		a[i], a[opp] = a[opp], a[i]
+	}
+
+	return a
+}
+
 func Filter(vs []string, f func(string) bool) []string {
 	filtered := make([]string, 0)
 	for _, v := range vs {
