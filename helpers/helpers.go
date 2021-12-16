@@ -139,3 +139,19 @@ func (s ByLength) Swap(i, j int) {
 func (s ByLength) Less(i, j int) bool {
 	return len(s[i]) < len(s[j])
 }
+
+func FindArraySum(arr []int) int {
+	res := 0
+	for i := 0; i < len(arr); i++ {
+		res += arr[i]
+	}
+	return res
+}
+
+func FindArrayProduct(arr []int) int {
+	res := 1
+	for i := 0; i < len(arr); i++ {
+		res *= arr[i]
+	}
+	return res
+}
