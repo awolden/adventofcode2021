@@ -28,7 +28,6 @@ func simulate(area Area) {
 		for yVel := area.yMin - 1000; yVel < 4000; yVel++ {
 			xv := xVel
 			yv := yVel
-
 			x := 0
 			y := 0
 			highestY := area.yMin
@@ -37,7 +36,7 @@ func simulate(area Area) {
 				y += yv
 				if y > highestY {
 					highestY = y
-
+				}
 
 				if x >= area.xMin && x <= area.xMax && y >= area.yMax && y <= area.yMin {
 					if highestY > superHighestY {
@@ -45,6 +44,7 @@ func simulate(area Area) {
 					}
 					hits++
 					break
+
 				}
 
 				//adjust velocities
